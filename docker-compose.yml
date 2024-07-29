@@ -1,0 +1,12 @@
+services:
+  crawler-back: 
+    container_name: crawler-back
+    build:
+      context: .docker
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+      - '7000:7000'
+    entrypoint: .docker/entrypoint.sh
+    volumes: 
+      - '.:/home/node/app'
